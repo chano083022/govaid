@@ -1,0 +1,207 @@
+/* Base Styles */
+.close-button {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.close-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto; /* Enable scrolling */
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Enable scroll inside the popup */
+    transition: transform 0.3s ease-out;
+}
+
+.popup-content.show {
+    transform: scale(1);
+}
+
+.popup-content h2 {
+    font-size: 26px;
+    color: #333;
+    margin-top: 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.popup .close-btn:hover {
+    color: #FF0000;
+}
+
+/* Form Styling */
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; /* Increased gap between sections */
+    padding: 15px;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased gap between fields */
+}
+
+.input-row {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 15px; /* Added margin bottom to separate rows */
+}
+
+.input-row label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Shorten the text field width */
+.input-field, .input-file {
+    width: 80%; /* Reduced width for text fields (shorter) */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    background-color: #00D4FF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0099cc;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Responsive Styles for Smaller Screens */
+
+/* For screens less than 768px */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 95%; /* Reduce popup width on smaller screens */
+        max-width: 95%;
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .popup-content h2 {
+        font-size: 22px; /* Smaller font size for headers */
+    }
+
+    .input-group {
+        gap: 10px; /* Reduce gap between fields */
+    }
+
+    .input-row {
+        min-width: 200px; /* Smaller input field width */
+    }
+
+    .input-field, .input-file {
+        width: 100%; /* Full width of input fields on smaller screens */
+    }
+
+    .close-button {
+        font-size: 14px; /* Smaller close button text */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    button[type="submit"] {
+        font-size: 14px; /* Adjust button text size */
+    }
+}
+
+/* For screens less than 480px */
+@media (max-width: 480px) {
+    .popup-content {
+        width: 100% !important; /* Full width of popup */
+        max-width: 100% !important;
+        padding: 10px !important; /* Reduce padding even further */
+    }
+
+    .popup-content h2 {
+        font-size: 18px !important; /* Smaller header text */
+    }
+
+    .input-row {
+        min-width: 100% !important; /* Ensure the input fields take full width */
+        margin-bottom: 15px !important; /* Ensure fields have space between them */
+    }
+
+    .input-field, .input-file {
+        width: 100% !important; /* Ensure fields take full width */
+    }
+
+    .close-button {
+        font-size: 12px !important; /* Further reduce font size */
+        padding: 6px 12px !important; /* Smaller padding */
+    }
+
+    button[type="submit"] {
+        font-size: 12px !important; /* Smaller button font size */
+    }
+}

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="applyMain.css">
+
+</head>
+<body>
+    <nav id="sidebar">
+        <ul>
+          
+            <li>
+                <span class="log">Goverment Aid</span>
+                <button onclick="toggleSidebar()" id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-280v-400L240-480l200 200Zm80 160h80v-720h-80v720Z"/></svg>
+                                    </button>
+            </li>
+            <li >
+                <a href="dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+                    <span>Dashboard</span></a>
+            </li>
+            
+            <li class="active">
+                <a href="add.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-240h80v-120h120v-80H520v-120h-80v120H320v80h120v120ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+                    <span>Apply</span></a>
+            </li>
+            <li>
+                <a href="update.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></svg>
+                    <span>Update</span></a>
+            </li>
+            <li >
+                <a href="delete.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M640-520v-80h240v80H640Zm-280 40q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z"/></svg>
+                    <span>Delete</span></a>
+            </li>
+            <li >
+                <a href="viewLog.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-200v-440 440-15 15Zm0 80q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v171q-18-13-38-22.5T800-508v-132H160v440h283q3 21 9 41t15 39H160Zm240-600h160v-80H400v80ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40Zm20-208v-112h-40v128l86 86 28-28-74-74Z"/></svg>
+                    <span>View Log</span></a>
+            </li>
+            <li>
+                <a href="login.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                    <span>Logout</span></a>
+            </li>
+        </ul>
+
+    </nav>
+    <main class="main-content">
+        <header class="header">
+          <h1>Welcome, Encoder! Going to APPLY New Applicant?        </h1>
+          <div class="user-info">
+            <span class="user-id">A-324232</span>
+            <div class="user-avatar">👤</div>
+          </div>
+        </header>
+  
+        <section class="programs-container">
+          <header>
+            <h1>Available Programs</h1>
+          </header>
+          <div class="programs-grid">
+            <div class="program">
+              <div class="program-content">
+                <img src="scr/tupad.jpg" alt="TUPAD Logo" class="program-logo">
+                <p>
+                  The Tulong Panghanapbuhay sa Ating Disadvantaged/Displaced Workers (TUPAD) Program is an initiative by the Department of Labor and Employment (DOLE) in the Philippines, designed to provide emergency employment opportunities to displaced, marginalized, and disadvantaged workers.
+                </p>
+              </div>
+              <button class="program-btn" id="tupadBtn" onclick="showTupadForm()">TUPAD</button>
+            </div>
+            <div class="program">
+              <div class="program-content">
+                <img src="scr/4ps.png" alt="4P's Logo" class="program-logo">
+                <p>
+                  The Pantawid Pamilyang Pilipino Program has two goals: first, social assistance to provide cash assistance to the poor to alleviate their needs (short term), and second, to break the intergenerational poverty cycle through investment in human capital like health, nutrition, and education (long-term).
+                </p><br><Br>
+              </div>
+              <button class="program-btn" id="fourPsBtn" onclick="showFourPsForm()">4P's</button>
+            </div>
+            <div class="program">
+              <div class="program-content">
+                <img src="scr/akap.jfif" alt="AKAP Logo" class="program-logo">
+                <p>Ayuda sa Mga Kapos na Ang Kita Program (AKAP) provides financial aid to minimum wage earners falling under the low-income category, who are severely affected by rising inflation. It aims to address immediate financial needs for eligible workers.
+                </p>
+              </div>
+              <button class="program-btn"  id="akapBtn"  onclick="showAkapForm()">AKAP</button>
+              
+            </div>
+            <div class="program">
+              <div class="program-content">
+                <img src="scr/SPES.png" alt="SPES Logo" class="program-logo">
+                <p>The Special Program for Employment of Students (SPES) is a program initiated by the DOLE. It provides employment opportunities to students who want to earn money during their summer vacation while gaining work experience.
+                </p>
+              </div>
+              <button class="program-btn" id="spesBtn"  onclick="showSpesForm()">SPES</button>
+            </div>
+            
+  
+  
+  <!-- TUPAD Form Popup -->
+  <div id="tupadFormPopup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closeForm('spesFormPopup')">x</span> <!-- Close button -->
+          
+          <h2>TUPAD Personal Information</h2>
+  
+          <form id="tupadForm">
+              <!-- Personal Information Section -->
+              <fieldset class="section">
+                  <legend>Personal Information</legend>
+                  <div class="input-group">
+                    <div class="input-row">
+                        <label for="nationalId">*National ID:</label>
+                        <input type="text" id="nationalId" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="householdNum">*Household Number:</label>
+                        <input type="text" id="householdNum" class="input-field" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-row">
+                        <label for="lastName">*Last Name:</label>
+                        <input type="text" id="lastName" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="firstName">*First Name:</label>
+                        <input type="text" id="firstName" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="middleInitial">*Middle Initial:</label>
+                        <input type="text" id="middleInitial" class="input-field" required>
+                    </div>
+                    
+                </div>
+                <div class="input-group">
+                    <div class="input-row">
+                        <label for="birthDate">*Birth Date:</label>
+                        <input type="date" id="birthDate" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="age">*Age:</label>
+                        <input type="number" id="age" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                      <label for="nationality">Nationality:</label>
+                      <select id="nationality" class="input-field" required>
+                        <option value="" disabled selected>Select Nationality</option>
+                        <option value="Single">Filipino</option>
+                        <option value="Single">American</option>
+                      </select>
+                    </div>
+                    
+                    <div class="input-row">
+                      <label for="civilStatus">*Civil Status:</label>
+                      <select id="civilStatus" class="input-field" required>
+                        <option value="" disabled selected>Select Civil Status</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Widowed">Widowed</option>
+                        <option value="Divorced">Divorced</option>
+                      </select>
+                    </div>
+                    <div class="input-row">
+                      <label for="sex">Sex:</label>
+                      <select id="sex" class="input-field" required>
+                        <option value="" disabled selected>Select Sex</option>
+                        <option value="Single">Male</option>
+                        <option value="Single">Female</option>
+      
+                      </select>
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="occupation">*Occupation:</label>
+                        <input type="text" id="occupation" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="annualIncome">*Annual Income:</label>
+                        <input type="number" id="annualIncome" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                      <label for="childrenId">How Many Children in Family:</label>
+                      <input type="text" id="childrenId" class="input-field" required>
+                    </div>
+                </div>
+            </fieldset>
+  
+            <!-- Address Section -->
+            <fieldset class="section">
+                <legend>Address</legend>
+                <div class="input-group">
+                  <div class="input-row">
+                    <label for="country">Country:</label>
+                    <select id="country" class="input-field" required>
+                      <option value="" disabled selected>Country</option>
+                      <option value="Single">Philippines</option>
+                      <option value="Single">American</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="region">Region:</label>
+                    <select id="region" class="input-field" required>
+                      <option value="" disabled selected>Region</option>
+                      <option value="Single">Calabarzon</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="province">Province:</label>
+                    <select id="province" class="input-field" required>
+                      <option value="" disabled selected>Province</option>
+                      <option value="Single">Quezon</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="municipality">Municipality:</label>
+                    <select id="municipality" class="input-field" required>
+                      <option value="" disabled selected>Municipality</option>
+                      <option value="Single">Lucena City</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="barangay">Barangay:</label>
+                    <select id="barangay" class="input-field" required>
+                      <option value="" disabled selected>Barangay</option>
+                      <option value="Single">Brgy 1</option>
+                    </select>
+                  </div>
+    
+                    <div class="input-row">
+                        <label for="street">*Street:</label>
+                        <input type="text" id="street" class="input-field" required>
+                    </div>
+                </div>
+            </fieldset>
+  
+              <!-- Documents Upload Section -->
+              <fieldset class="section">
+                  <legend>Documents</legend>
+                  <div class="input-group">
+                      <div class="input-row">
+                          <label for="barangayCert">*Barangay Certification:</label>
+                          <input type="file" id="barangayCert" class="input-file" accept="image/*">
+                      </div>
+                      <div class="input-row">
+                          <label for="photo">*2x2 Recent Photo:</label>
+                          <input type="file" id="photo" class="input-file" accept="image/*">
+                      </div>
+                      <div class="input-row">
+                          <label for="itr">*Income Tax Return (ITR) or Certificate of Indigency:</label>
+                          <input type="file" id="itr" class="input-file" accept="image/*">
+                      </div>
+                      <div class="input-row">
+                          <label for="employmentProof">*Proof of Employment Status:</label>
+                          <input type="file" id="employmentProof" class="input-file" accept="image/*">
+                      </div>
+                      <div class="input-row">
+                          <label for="validID">*Valid Government ID:</label>
+                          <input type="file" id="validID" class="input-file" accept="image/*">
+                      </div>
+                      <div class="input-row">
+                          <label for="sssPhilHealth">*SSS/PhilHealth/HDMF Membership:</label>
+                          <input type="file" id="sssPhilHealth" class="input-file" accept="image/*">
+                      </div>
+                  </div>
+              </fieldset>
+  
+              <!-- Document Status -->
+              <fieldset class="section">
+                  <legend>Document Status</legend>
+                  <div class="input-group">
+                      <div class="input-row">
+                          <label><input type="radio" name="docStatus" value="complete"> Complete</label>
+                          <label><input type="radio" name="docStatus" value="incomplete"> Incomplete</label>
+                      </div>
+                  </div>
+              </fieldset>
+              <button type="submit" id="submitTupadForm">Submit</button>
+              <button type="button" id="tupadFormPopup" class="close-button" onclick="closeTupadForm()">Cancel</button>
+  
+          </form>
+      </div>
+  </div>
+  
+  
+  <div id="fourPsFormPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeForm('fourPsFormPopup')">&times;</span>
+      <h2>4P's Personal Information</h2>
+      <form id="fourPsForm">
+        <!-- Personal Information Section -->
+        <fieldset class="section">
+          <legend>Personal Information</legend>
+          <div class="input-group">
+            <div class="input-row">
+                <label for="nationalId">*National ID:</label>
+                <input type="text" id="nationalId" class="input-field" required>
+            </div>
+            <div class="input-row">
+                <label for="householdNum">*Household Number:</label>
+                <input type="text" id="householdNum" class="input-field" required>
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="input-row">
+                <label for="lastName">*Last Name:</label>
+                <input type="text" id="lastName" class="input-field" required>
+            </div>
+            <div class="input-row">
+                <label for="firstName">*First Name:</label>
+                <input type="text" id="firstName" class="input-field" required>
+            </div>
+            <div class="input-row">
+                <label for="middleInitial">*Middle Initial:</label>
+                <input type="text" id="middleInitial" class="input-field" required>
+            </div>
+            
+        </div>
+        <div class="input-group">
+            <div class="input-row">
+                <label for="birthDate">*Birth Date:</label>
+                <input type="date" id="birthDate" class="input-field" required>
+            </div>
+            <div class="input-row">
+                <label for="age">*Age:</label>
+                <input type="number" id="age" class="input-field" required>
+            </div>
+            <div class="input-row">
+              <label for="nationality">Nationality:</label>
+              <select id="nationality" class="input-field" required>
+                <option value="" disabled selected>Select Nationality</option>
+                <option value="Single">Filipino</option>
+                <option value="Single">American</option>
+              </select>
+            </div>
+            
+            <div class="input-row">
+              <label for="civilStatus">*Civil Status:</label>
+              <select id="civilStatus" class="input-field" required>
+                <option value="" disabled selected>Select Civil Status</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Widowed">Widowed</option>
+                <option value="Divorced">Divorced</option>
+              </select>
+            </div>
+            <div class="input-row">
+              <label for="sex">Sex:</label>
+              <select id="sex" class="input-field" required>
+                <option value="" disabled selected>Select Sex</option>
+                <option value="Single">Male</option>
+                <option value="Single">Female</option>
+  
+              </select>
+            </div>
+            
+            <div class="input-row">
+                <label for="occupation">*Occupation:</label>
+                <input type="text" id="occupation" class="input-field" required>
+            </div>
+            <div class="input-row">
+                <label for="annualIncome">*Annual Income:</label>
+                <input type="number" id="annualIncome" class="input-field" required>
+            </div>
+            <div class="input-row">
+              <label for="childrenId">How Many Children in Family:</label>
+              <input type="text" id="childrenId" class="input-field" required>
+            </div>
+        </div>
+    </fieldset>
+  
+    <!-- Address Section -->
+    <fieldset class="section">
+        <legend>Address</legend>
+        <div class="input-group">
+          <div class="input-row">
+            <label for="country">Country:</label>
+            <select id="country" class="input-field" required>
+              <option value="" disabled selected>Country</option>
+              <option value="Single">Philippines</option>
+              <option value="Single">American</option>
+            </select>
+          </div>
+          <div class="input-row">
+            <label for="region">Region:</label>
+            <select id="region" class="input-field" required>
+              <option value="" disabled selected>Region</option>
+              <option value="Single">Calabarzon</option>
+            </select>
+          </div>
+          <div class="input-row">
+            <label for="province">Province:</label>
+            <select id="province" class="input-field" required>
+              <option value="" disabled selected>Province</option>
+              <option value="Single">Quezon</option>
+            </select>
+          </div>
+          <div class="input-row">
+            <label for="municipality">Municipality:</label>
+            <select id="municipality" class="input-field" required>
+              <option value="" disabled selected>Municipality</option>
+              <option value="Single">Lucena City</option>
+            </select>
+          </div>
+          <div class="input-row">
+            <label for="barangay">Barangay:</label>
+            <select id="barangay" class="input-field" required>
+              <option value="" disabled selected>Barangay</option>
+              <option value="Single">Brgy 1</option>
+            </select>
+          </div>
+  
+            <div class="input-row">
+                <label for="street">*Street:</label>
+                <input type="text" id="street" class="input-field" required>
+            </div>
+        </div>
+    </fieldset>
+      
+        <!-- Documents Upload Section -->
+        <fieldset class="section">
+          <legend>Documents</legend>
+          <div class="input-group">
+            <div class="input-row">
+              <label for="residency">*Proof of Residency:</label>
+              <input type="file" id="residency" class="input-field" required>
+            </div>
+            <div class="input-row">
+              <label for="barangayCert">*Barangay Certification:</label>
+              <input type="file" id="barangayCert" class="input-field" required>
+            </div>
+            <!-- New Document Upload Fields -->
+            <div class="input-row">
+              <label for="birthCertificateChildren">*Birth Certificates of Children:</label>
+              <input type="file" id="birthCertificateChildren" class="input-field" required>
+            </div>
+            <div class="input-row">
+              <label for="itrOrIndigency">*Income Tax Return (ITR) or Certificate of Indigency:</label>
+              <input type="file" id="itrOrIndigency" class="input-field" required>
+            </div>
+            <div class="input-row">
+              <label for="marriageCertificate">*Marriage Certificate (for married applicants):</label>
+              <input type="file" id="marriageCertificate" class="input-field" required>
+            </div>
+            <div class="input-row">
+              <label for="validGovId">*Valid Government ID (e.g., Voter’s ID, PhilSys ID, Driver’s License):</label>
+              <input type="file" id="validGovId" class="input-field" required>
+            </div>
+          </div>
+        </fieldset>
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="button" id="fourPsFormPopup" class="close-button" onclick="closeFourPsForm()">Cancel</button>
+  
+      </form>
+    </div>
+  </div>
+  <div id="akapFormPopup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closeForm('akapFormPopup')">&times;</span>
+        <h2>AKAP Personal Information</h2>
+        <form id="akapForm">
+            <!-- Personal Information Section -->
+            <fieldset class="section">
+                <legend>Personal Information</legend>
+                <div class="input-group">
+                  <div class="input-row">
+                      <label for="nationalId">*National ID:</label>
+                      <input type="text" id="nationalId" class="input-field" required>
+                  </div>
+                  <div class="input-row">
+                      <label for="householdNum">*Household Number:</label>
+                      <input type="text" id="householdNum" class="input-field" required>
+                  </div>
+              </div>
+              <div class="input-group">
+                  <div class="input-row">
+                      <label for="lastName">*Last Name:</label>
+                      <input type="text" id="lastName" class="input-field" required>
+                  </div>
+                  <div class="input-row">
+                      <label for="firstName">*First Name:</label>
+                      <input type="text" id="firstName" class="input-field" required>
+                  </div>
+                  <div class="input-row">
+                      <label for="middleInitial">*Middle Initial:</label>
+                      <input type="text" id="middleInitial" class="input-field" required>
+                  </div>
+                  
+              </div>
+              <div class="input-group">
+                  <div class="input-row">
+                      <label for="birthDate">*Birth Date:</label>
+                      <input type="date" id="birthDate" class="input-field" required>
+                  </div>
+                  <div class="input-row">
+                      <label for="age">*Age:</label>
+                      <input type="number" id="age" class="input-field" required>
+                  </div>
+                  <div class="input-row">
+                    <label for="nationality">Nationality:</label>
+                    <select id="nationality" class="input-field" required>
+                      <option value="" disabled selected>Select Nationality</option>
+                      <option value="Single">Filipino</option>
+                      <option value="Single">American</option>
+                    </select>
+                  </div>
+                  
+                  <div class="input-row">
+                    <label for="civilStatus">*Civil Status:</label>
+                    <select id="civilStatus" class="input-field" required>
+                      <option value="" disabled selected>Select Civil Status</option>
+                      <option value="Single">Single</option>
+                      <option value="Married">Married</option>
+                      <option value="Widowed">Widowed</option>
+                      <option value="Divorced">Divorced</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="sex">Sex:</label>
+                    <select id="sex" class="input-field" required>
+                      <option value="" disabled selected>Select Sex</option>
+                      <option value="Single">Male</option>
+                      <option value="Single">Female</option>
+    
+                    </select>
+                  </div>
+                  
+                  <div class="input-row">
+                      <label for="occupation">*Occupation:</label>
+                      <input type="text" id="occupation" class="input-field" required>
+                  </div>
+                  <div class="input-row">
+                      <label for="annualIncome">*Annual Income:</label>
+                      <input type="number" id="annualIncome" class="input-field" required>
+                  </div>
+                  <div class="input-row">
+                    <label for="childrenId">How Many Children in Family:</label>
+                    <input type="text" id="childrenId" class="input-field" required>
+                  </div>
+              </div>
+          </fieldset>
+  
+          <!-- Address Section -->
+          <fieldset class="section">
+              <legend>Address</legend>
+              <div class="input-group">
+                <div class="input-row">
+                  <label for="country">Country:</label>
+                  <select id="country" class="input-field" required>
+                    <option value="" disabled selected>Country</option>
+                    <option value="Single">Philippines</option>
+                    <option value="Single">American</option>
+                  </select>
+                </div>
+                <div class="input-row">
+                  <label for="region">Region:</label>
+                  <select id="region" class="input-field" required>
+                    <option value="" disabled selected>Region</option>
+                    <option value="Single">Calabarzon</option>
+                  </select>
+                </div>
+                <div class="input-row">
+                  <label for="province">Province:</label>
+                  <select id="province" class="input-field" required>
+                    <option value="" disabled selected>Province</option>
+                    <option value="Single">Quezon</option>
+                  </select>
+                </div>
+                <div class="input-row">
+                  <label for="municipality">Municipality:</label>
+                  <select id="municipality" class="input-field" required>
+                    <option value="" disabled selected>Municipality</option>
+                    <option value="Single">Lucena City</option>
+                  </select>
+                </div>
+                <div class="input-row">
+                  <label for="barangay">Barangay:</label>
+                  <select id="barangay" class="input-field" required>
+                    <option value="" disabled selected>Barangay</option>
+                    <option value="Single">Brgy 1</option>
+                  </select>
+                </div>
+  
+                  <div class="input-row">
+                      <label for="street">*Street:</label>
+                      <input type="text" id="street" class="input-field" required>
+                  </div>
+              </div>
+          </fieldset>
+  
+            <!-- Documents Upload Section -->
+            <fieldset class="section">
+                <legend>Documents</legend>
+                <div class="input-group">
+                    <div class="input-row">
+                        <label for="barangayCert">*Barangay Certification:</label>
+                        <input type="file" id="barangayCert" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="recentPhoto">*2x2 Recent Photo:</label>
+                        <input type="file" id="recentPhoto" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="itr">*Income Tax Return (ITR) or Certificate of Indigency:</label>
+                        <input type="file" id="itr" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="employmentProof">*Proof of Employment Status:</label>
+                        <input type="file" id="employmentProof" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="govtId">*Valid Government ID (e.g., Voter's ID, PhilSys ID, Driver's License):</label>
+                        <input type="file" id="govtId" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="sssPhilHealthHd">*SSS/PhilHealth/HDMF Membership:</label>
+                        <input type="file" id="sssPhilHealthHd" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="lossProof">*Proof of Loss of Income:</label>
+                        <input type="file" id="lossProof" class="input-field" required>
+                    </div>
+                </div>
+            </fieldset>
+  
+            <!-- Document Status -->
+            <fieldset class="section">
+              <legend>Document Status</legend>
+              <div class="input-group">
+                  <div class="input-row">
+                      <label><input type="radio" name="docStatus" value="complete"> Complete</label>
+                      <label><input type="radio" name="docStatus" value="incomplete"> Incomplete</label>
+                  </div>
+              </div>
+          </fieldset>
+          <button type="submit" id="submitTupadForm">Submit</button>
+          <button type="button" id="akapFormPopup" class="close-button" onclick="closeAkapForm()">Cancel</button>
+  
+        </form>
+    </div>
+  </div>
+  <div id="spesFormPopup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closeForm('spesFormPopup')">&times;</span>
+        <h2>SPES Personal Information</h2>
+        <form id="spesForm">
+            <!-- Personal Information Section -->
+            <fieldset class="section">
+                <legend>Personal Information</legend>
+                <div class="input-group">
+                    <div class="input-row">
+                        <label for="nationalId">*National ID:</label>
+                        <input type="text" id="nationalId" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="householdNum">*Household Number:</label>
+                        <input type="text" id="householdNum" class="input-field" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-row">
+                        <label for="lastName">*Last Name:</label>
+                        <input type="text" id="lastName" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="firstName">*First Name:</label>
+                        <input type="text" id="firstName" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="middleInitial">*Middle Initial:</label>
+                        <input type="text" id="middleInitial" class="input-field" required>
+                    </div>
+                    
+                </div>
+                <div class="input-group">
+                    <div class="input-row">
+                        <label for="birthDate">*Birth Date:</label>
+                        <input type="date" id="birthDate" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="age">*Age:</label>
+                        <input type="number" id="age" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                      <label for="nationality">Nationality:</label>
+                      <select id="nationality" class="input-field" required>
+                        <option value="" disabled selected>Select Nationality</option>
+                        <option value="Single">Filipino</option>
+                        <option value="Single">American</option>
+                      </select>
+                    </div>
+                    
+                    <div class="input-row">
+                      <label for="civilStatus">*Civil Status:</label>
+                      <select id="civilStatus" class="input-field" required>
+                        <option value="" disabled selected>Select Civil Status</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Widowed">Widowed</option>
+                        <option value="Divorced">Divorced</option>
+                      </select>
+                    </div>
+                    <div class="input-row">
+                      <label for="sex">Sex:</label>
+                      <select id="sex" class="input-field" required>
+                        <option value="" disabled selected>Select Sex</option>
+                        <option value="Single">Male</option>
+                        <option value="Single">Female</option>
+      
+                      </select>
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="occupation">*Occupation:</label>
+                        <input type="text" id="occupation" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="annualIncome">*Annual Income:</label>
+                        <input type="number" id="annualIncome" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                      <label for="childrenId">How Many Children in Family:</label>
+                      <input type="text" id="childrenId" class="input-field" required>
+                    </div>
+                </div>
+            </fieldset>
+  
+            <!-- Address Section -->
+            <fieldset class="section">
+                <legend>Address</legend>
+                <div class="input-group">
+                  <div class="input-row">
+                    <label for="country">Country:</label>
+                    <select id="country" class="input-field" required>
+                      <option value="" disabled selected>Country</option>
+                      <option value="Single">Philippines</option>
+                      <option value="Single">American</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="region">Region:</label>
+                    <select id="region" class="input-field" required>
+                      <option value="" disabled selected>Region</option>
+                      <option value="Single">Calabarzon</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="province">Province:</label>
+                    <select id="province" class="input-field" required>
+                      <option value="" disabled selected>Province</option>
+                      <option value="Single">Quezon</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="municipality">Municipality:</label>
+                    <select id="municipality" class="input-field" required>
+                      <option value="" disabled selected>Municipality</option>
+                      <option value="Single">Lucena City</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="barangay">Barangay:</label>
+                    <select id="barangay" class="input-field" required>
+                      <option value="" disabled selected>Barangay</option>
+                      <option value="Single">Brgy 1</option>
+                    </select>
+                  </div>
+    
+                    <div class="input-row">
+                        <label for="street">*Street:</label>
+                        <input type="text" id="street" class="input-field" required>
+                    </div>
+                </div>
+            </fieldset>
+  
+            <!-- Documents Upload Section -->
+            <fieldset class="section">
+                <legend>Documents</legend>
+                <div class="input-group">
+                    <div class="input-row">
+                        <label for="barangayCert">*Barangay Certification:</label>
+                        <input type="file" id="barangayCert" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="enrollmentCert">*Certificate of Enrollment:</label>
+                        <input type="file" id="enrollmentCert" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="studentId">*Student ID Photo Copy:</label>
+                        <input type="file" id="studentId" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="birthCertChildren">*Birth Certificates of Children:</label>
+                        <input type="file" id="birthCertChildren" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="gradeCopy">*Copy of Grade:</label>
+                        <input type="file" id="gradeCopy" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="medicalCert">*Medical Certificate (Optional):</label>
+                        <input type="file" id="medicalCert" class="input-field">
+                    </div>
+                </div>
+            </fieldset>
+  
+           <!-- Document Status -->
+           <fieldset class="section">
+            <legend>Document Status</legend>
+            <div class="input-group">
+                <div class="input-row">
+                    <label><input type="radio" name="docStatus" value="complete"> Complete</label>
+                    <label><input type="radio" name="docStatus" value="incomplete"> Incomplete</label>
+                </div>
+            </div>
+        </fieldset>
+        <button type="submit" id="submitTupadForm">Submit</button>
+        <button type="button" id="spesFormPopup" class="close-button" onclick="closeSpesForm()">Cancel</button>
+        </form>
+    </div>
+  </div>
+  
+  
+    </div>
+  </div>
+  
+  
+        
+      </main>
+    </div>
+    <script>
+      // Show the TUPAD Form
+  function showTupadForm() {
+      document.getElementById('tupadFormPopup').style.display = 'flex';
+  }
+  function showFourPsForm() {
+      document.getElementById('fourPsFormPopup').style.display = 'flex';
+  }
+  function showAkapForm() {
+      document.getElementById('akapFormPopup').style.display = 'flex';
+  }
+  function showSpesForm() {
+      document.getElementById('spesFormPopup').style.display = 'flex';
+  }
+  
+  // Close the TUPAD Form
+  function closeTupadForm() {
+      document.getElementById('tupadFormPopup').style.display = 'none';
+  }
+  function closeFourPsForm() {
+      document.getElementById('fourPsFormPopup').style.display = 'none';
+  }
+  function closeAkapForm() {
+      document.getElementById('akapFormPopup').style.display = 'none';
+  }
+  function closeSpesForm() {
+      document.getElementById('spesFormPopup').style.display = 'none';
+  }
+    </script>
+    <script src="sidebar.js"></script>
+</body>
+</html>

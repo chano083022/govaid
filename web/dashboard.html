@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <span class="log">Government Aid</span>
+                <button onclick="toggleSidebar()" id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M440-280v-400L240-480l200 200Zm80 160h80v-720h-80v720Z"/>
+                    </svg>
+                </button>
+            </li>
+            <li class="active">
+                <a href="dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="add.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M440-240h80v-120h120v-80H520v-120h-80v120H320v80h120v120ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/>
+                    </svg>
+                    <span>Apply</span>
+                </a>
+            </li>
+            <li>
+                <a href="update.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/>
+                    </svg>
+                    <span>Update</span>
+                </a>
+            </li>
+            <li>
+                <a href="delete.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M640-520v-80h240v80H640Zm-280 40q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z"/>
+                    </svg>
+                    <span>Delete</span>
+                </a>
+            </li>
+            <li >
+                <a href="viewLog.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-200v-440 440-15 15Zm0 80q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v171q-18-13-38-22.5T800-508v-132H160v440h283q3 21 9 41t15 39H160Zm240-600h160v-80H400v80ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40Zm20-208v-112h-40v128l86 86 28-28-74-74Z"/></svg>
+                    <span>View Log</span></a>
+            </li>
+            <li>
+                <a href="login.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+      <header class="header">
+        <h1>Welcome, Encoder! to Government Aid Monitoring System</h1>
+        <div class="user-info">
+          <span class="user-id">A-324232</span>
+          <div class="user-avatar">👤</div>
+        </div>
+      </header>
+
+      <section class="table-section">
+        <div class="table-controls">
+            <select class="dropdown" id="statusFilter">
+                <option value="">Applicant Status</option>
+                <option value="Approved">Approved</option>
+                <option value="Pending">Pending</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+            <input type="text" id="searchBox" placeholder="Search..." class="search-box">
+            <button id="searchButton" class="search-button">Search</button>
+        </div>
+    
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>National ID No</th>
+                        <th>Name</th>
+                        <th>Aid Type</th>
+                        <th>Status</th>
+                        <th>Last Updated</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <td>0234-5015-151</td>
+                        <td>Juan Dela Cruz</td>
+                        <td>DSWD-4P's</td>
+                        <td class="status">Pending</td>
+                        <td>2024-11-15</td>
+                        <td>
+                            <select class="action-button">
+                                <option value="Approve">Approve</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Declined">Declined</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>0234-5015-152</td>
+                        <td>Maria Santos</td>
+                        <td>DSWD-4P's</td>
+                        <td class="status">Approved</td>
+                        <td>2024-11-16</td>
+                        <td>
+                            <select class="action-button">
+                                <option value="Approve">Approve</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Declined">Declined</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>0234-5015-153</td>
+                        <td>Pedro Cruz</td>
+                        <td>DSWD-4P's</td>
+                        <td class="status">Rejected</td>
+                        <td>2024-11-17</td>
+                        <td>
+                            <select class="action-button">
+                                <option value="Approve">Approve</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Declined">Declined</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    </main>
+
+    <script src="sidebar.js"></script>
+
+    <script>
+      // JavaScript to handle the action selection and update the status
+      document.querySelectorAll('.action-button').forEach(select => {
+        select.addEventListener('change', function () {
+          const row = this.closest('tr');
+          const statusCell = row.querySelector('.status');
+          const selectedOption = this.value;
+          
+          if (selectedOption === "Approve") {
+            statusCell.textContent = "Approved";
+            statusCell.style.color = "green";
+          } else if (selectedOption === "Pending") {
+            statusCell.textContent = "Pending";
+            statusCell.style.color = "orange";
+          } else if (selectedOption === "Declined") {
+            statusCell.textContent = "Rejected";
+            statusCell.style.color = "red";
+          }
+        });
+      });
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+    const statusFilter = document.getElementById('statusFilter');
+    const searchBox = document.getElementById('searchBox');
+    const searchButton = document.getElementById('searchButton');
+    const tableBody = document.getElementById('tableBody');
+
+    // Function to filter the table by status
+    const filterByStatus = () => {
+        const selectedStatus = statusFilter.value.toLowerCase();
+        const rows = tableBody.getElementsByTagName('tr');
+        
+        // Loop through all table rows and hide or show them based on the status
+        for (let row of rows) {
+            const status = row.querySelector('.status').textContent.toLowerCase();
+            if (selectedStatus === '' || status === selectedStatus) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        }
+    };
+
+    // Function to search by name or national ID
+    const searchTable = () => {
+        const query = searchBox.value.toLowerCase();
+        const rows = tableBody.getElementsByTagName('tr');
+        
+        // Loop through all rows and check if they match the search query
+        for (let row of rows) {
+            const cells = row.getElementsByTagName('td');
+            let match = false;
+            
+            // Loop through all cells to check for a match
+            for (let cell of cells) {
+                if (cell.textContent.toLowerCase().includes(query)) {
+                    match = true;
+                    break;
+                }
+            }
+            row.style.display = match ? '' : 'none';
+        }
+    };
+
+    // Event listener for status filter change
+    statusFilter.addEventListener('change', () => {
+        filterByStatus();  // Apply the filter when the dropdown changes
+    });
+
+    // Event listener for search box input
+    searchBox.addEventListener('input', () => {
+        searchTable();  // Search the table when the user types
+    });
+
+    // Event listener for the search button click
+    searchButton.addEventListener('click', () => {
+        searchTable();  // Perform the search when the button is clicked
+    });
+
+    // Initial filter and search
+    filterByStatus();
+    searchTable();
+});
+
+    </script>
+</body>
+</html>

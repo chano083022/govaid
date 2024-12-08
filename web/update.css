@@ -1,0 +1,199 @@
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    overflow-y: auto; 
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-info .user-id {
+    margin-right: 10px;
+  }
+
+  .user-info .user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #00d4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+  }
+
+  .form-container {
+    margin-top: 20px;
+  }
+
+  header {
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  /* Form Styling */
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px; /* Increased gap between sections */
+  padding: 15px;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+legend {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.input-group {
+  display: flex;
+  
+  flex-wrap: wrap;
+  gap: 20px; /* Increased gap between fields in a row */
+}
+
+.input-row {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 15px; /* Added margin bottom to separate rows */
+}
+
+.input-row label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Shorten the text field width */
+.input-field, .input-file {
+  width: 80%; /* Reduced width for text fields (shorter) */
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  background-color: #00D4FF;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0099cc;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+.search-input-wrapper {
+    display: flex;
+    padding: 10px 20px;
+
+    align-items: center;
+    border: 2px solid grey;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+
+  .search-btn {
+    padding: 10px 20px;
+    background-color: grey;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .search-btn:hover {
+    background-color: #008ABF;
+    transform: scale(1.05);
+  }
+  #nationalId {
+    width: 60%; /* Adjust to make it smaller */
+    max-width: 300px; /* Add a maximum width to constrain its size */
+    padding: 10px; /* Adjust padding for consistent design */
+    font-size: 14px;
+  }
+  /* Alert container */
+.alert-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 300px;
+}
+
+/* Basic alert styles */
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* Success message */
+.alert.success {
+    background-color: #4CAF50;
+}
+
+/* Error message */
+.alert.error {
+    background-color: #f44336;
+}
+
+/* Info message */
+.alert.info {
+    background-color: #2196F3;
+}
+.alert-warning {
+  background-color: #ff9800;
+}

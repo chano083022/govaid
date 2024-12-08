@@ -1,0 +1,166 @@
+
+/* Base Styles (Desktop-first Approach) */
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+  }
+  
+  .header h1 {
+    font-size: 18px;
+    margin: 0;
+    flex: 1 100%; /* Make the heading take full width on small screens */
+    text-align: center; /* Center-align the heading */
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center-align on small screens */
+    flex: 1 100%; /* Take full width on smaller screens */
+    margin-top: 10px; /* Add spacing for smaller screens */
+  }
+  
+  .user-info .user-id {
+    margin-right: 10px;
+  }
+  
+  .user-info .user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #00d4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .table-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .table-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .dropdown, .search-box, .search-button {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .search-button {
+    background-color: #00D4FF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #009ECC;
+  }
+  
+  .data-table {
+    width: 100%;
+    
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #ddd;
+
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .data-table th {
+    background-color: #00d4ff;
+    color: white;
+  }
+  
+  .data-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .action-button {
+    padding: 8px 12px;
+    background-color: #00d4ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #008bbf;
+  }
+  
+  /* Responsive Styles for Smaller Screens */
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center;
+    }
+  
+    .table-controls {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .dropdown, .search-box, .search-button {
+      width: 100%; /* Full width for smaller screens */
+    }
+  
+    .data-table th,
+    .data-table td {
+      padding: 8px; /* Reduce padding for smaller screens */
+      font-size: 14px;
+    }
+  
+    .user-avatar {
+      width: 30px;
+      height: 30px;
+      font-size: 12px; /* Adjust font size for smaller avatars */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header h1 {
+      font-size: 16px; /* Smaller font size for very small screens */
+    }
+  
+    .data-table {
+      font-size: 12px; /* Smaller font size for table */
+    }
+  
+    .action-button {
+      padding: 6px 10px; /* Adjust button size */
+      font-size: 12px;
+    }
+  }
+  
+  

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Login - Government Aid Monitoring System</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .input-group input:focus {
+      border-color: #00d4ff;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #00d4ff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #0066cc;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .forgot-password a {
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    /* Custom alert styles */
+    .custom-alert {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      text-align: center;
+      display: none;
+    }
+
+    .custom-alert h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .custom-alert p {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .custom-alert button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #00d4ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .custom-alert button:hover {
+      background-color: #0066cc;
+    }
+
+    /* Overlay */
+    .alert-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+
+    .forgot-password a {
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    /* Forgot Password Modal */
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      display: none;
+      text-align: center;
+    }
+
+    .modal h3 {
+      margin-bottom: 10px;
+    }
+
+    .modal input {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .modal button {
+      padding: 10px 20px;
+      background-color: #00d4ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .modal button:hover {
+      background-color: #0066cc;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+    
+    .alert-container {
+  position: fixed; /* Ensures the container is fixed to the viewport */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make it span the entire width of the page */
+  padding: 10px; /* Add padding for spacing */
+  z-index: 2000; /* Ensure it appears above other elements */
+  text-align: center; /* Center the text content horizontally */
+}
+.alert {
+  display: inline-block; /* Keeps alerts centered within the container */
+  margin: 5px; /* Add space between alerts */
+  padding: 10px 20px; /* Inner spacing for readability */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Default text color */
+  font-size: 16px; /* Text size */
+  background-color: gray; /* Default background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for style */
+}
+.alert-success {
+  background-color: #4CAF50; /* Green for success */
+}
+.alert-error {
+  background-color: #f44336; /* Red for errors */
+}
+.alert-warning {
+  background-color: #ff9800; /* Orange for warnings */
+}
+.alert-info {
+  background-color: #2196F3; /* Blue for information */
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login to Government Aid Monitoring System</h2>
+    <form id="loginForm" method="POST">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+
+      <div class="forgot-password">
+        <a id="forgotPasswordLink">Forgot your password?</a>
+      </div>
+
+    </form>
+  </div>
+  <div id="alert-container" class="alert-container" ></div>
+
+
+  <!-- Custom alert box -->
+  <div class="alert-overlay"></div>
+  <div class="custom-alert" id="customAlert">
+    <h3 id="alertTitle"></h3>
+    <p id="alertMessage"></p>
+    <button onclick="closeAlert()">OK</button>
+  </div>
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="forgotPasswordModal">
+    <h3>Forgot Password</h3>
+    <p>Enter your email to reset your password.</p>
+    <input type="email" id="forgotEmail" placeholder="Enter your email" required>
+    <button onclick="submitForgotPassword()">Submit</button>
+    <button onclick="closeForgotPasswordModal()">Close</button>
+  </div>
+
+
+  <script>
+function displayAlert(message, type) {
+  const alertContainer = document.getElementById('alert-container');
+
+  const alertDiv = document.createElement('div');
+  alertDiv.classList.add('alert', `alert-${type}`); // Add specific type class
+  alertDiv.textContent = message;
+
+  alertContainer.appendChild(alertDiv);
+
+  // Remove the alert after 3 seconds
+  setTimeout(() => {
+    alertDiv.remove();
+  }, 3000);
+}
+
+        
+
+
+    const defaultUsername = 'admin';
+    const defaultPassword = 'admin123';
+
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const enteredUsername = document.getElementById('username').value.trim();
+      const enteredPassword = document.getElementById('password').value.trim();
+
+      if (enteredUsername === defaultUsername && enteredPassword === defaultPassword) {
+        displayAlert('Success', 'Login successful!');
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 2000); // Redirect after 2 seconds
+      } else {
+        displayAlert('Error', 'Invalid username or password. Please try again.');
+      }
+    });
+
+    function displayAlert(title, message) {
+      const overlay = document.querySelector('.alert-overlay');
+      const alertBox = document.getElementById('customAlert');
+      document.getElementById('alertTitle').textContent = title;
+      document.getElementById('alertMessage').textContent = message;
+
+      overlay.style.display = 'block';
+      alertBox.style.display = 'block';
+    }
+
+    function closeAlert() {
+      const overlay = document.querySelector('.alert-overlay');
+      const alertBox = document.getElementById('customAlert');
+
+      overlay.style.display = 'none';
+      alertBox.style.display = 'none';
+    }
+
+    const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+    const forgotPasswordModal = document.getElementById('forgotPasswordModal');
+    const overlay = document.getElementById('overlay');
+
+    // Show modal
+    forgotPasswordLink.addEventListener('click', function () {
+      overlay.style.display = 'block';
+      forgotPasswordModal.style.display = 'block';
+    });
+
+    // Close modal
+    function closeForgotPasswordModal() {
+      overlay.style.display = 'none';
+      forgotPasswordModal.style.display = 'none';
+    }
+
+    // Submit email for resetting password
+    function submitForgotPassword() {
+  const email = document.getElementById('forgotEmail').value.trim();
+  const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+  if (!email) {
+    displayAlert('Please enter an email address.','warning');
+
+    return;
+  }
+
+  if (!gmailRegex.test(email)) {
+    displayAlert('Please enter a valid Gmail address (e.g., example@gmail.com).','info');
+
+    return;
+  }
+
+  displayAlert(`Password reset instructions have been sent to ${email}.`,'success');
+
+  closeForgotPasswordModal();
+}
+
+
+  </script>
+  
+</body>
+</html>

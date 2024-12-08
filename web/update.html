@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="update.css">
+
+</head>
+<body>
+    <nav id="sidebar">
+        <ul>
+          
+            <li>
+                <span class="log">Goverment Aid</span>
+                <button onclick="toggleSidebar()" id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-280v-400L240-480l200 200Zm80 160h80v-720h-80v720Z"/></svg>
+                                    </button>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+                    <span>Dashboard</span></a>
+            </li>
+            
+            <li >
+                <a href="add.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-240h80v-120h120v-80H520v-120h-80v120H320v80h120v120ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+                    <span>Apply</span></a>
+            </li>
+            <li class="active">
+                <a href="update.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></svg>
+                    <span>Update</span></a>
+            </li>
+            <li >
+                <a href="delete.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M640-520v-80h240v80H640Zm-280 40q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z"/></svg>
+                    <span>Delete</span></a>
+            </li>
+            <li >
+                <a href="viewLog.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-200v-440 440-15 15Zm0 80q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v171q-18-13-38-22.5T800-508v-132H160v440h283q3 21 9 41t15 39H160Zm240-600h160v-80H400v80ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40Zm20-208v-112h-40v128l86 86 28-28-74-74Z"/></svg>
+                    <span>View Log</span></a>
+            </li>
+            <li>
+                <a href="login.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                    <span>Logout</span></a>
+            </li>
+        </ul>
+
+    </nav>
+        <main class="main-content">
+      
+            <header class="header">
+                <h1>Welcome, Encoder! Going to UPDATE Applicant? </h1>
+                <div class="user-info">
+                  <span class="user-id">A-324232</span>
+                  <div class="user-avatar">👤</div>
+                </div>
+              </header>
+        
+              <section class="form-container">
+                <header>
+                  <h1>Update Applicant Details</h1>
+                </header>
+
+                <fieldset class="section">
+                    <legend>Personal Information</legend>
+                <form class="form">
+                    <div class="form-group">
+                        
+                    
+                      <div class="input-group">
+                        <div class="input-row">
+                            <label for="nationalId">NAtional ID Search:</label>
+                            <input type="text" id="nationalId" class="input-field" required>
+                            <button type="button" class="search-btn">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                  
+                <div class="input-group">
+                    <div class="input-row">
+                        <label for="lastName">*Last Name:</label>
+                        <input type="text" id="lastName" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="firstName">*First Name:</label>
+                        <input type="text" id="firstName" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="middleInitial">*Middle Initial:</label>
+                        <input type="text" id="middleInitial" class="input-field" required>
+                    </div>
+                    
+                </div>
+                <div class="input-group">
+                    <div class="input-row">
+                        <label for="birthDate">*Birth Date:</label>
+                        <input type="date" id="birthDate" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="age">*Age:</label>
+                        <input type="number" id="age" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                      <label for="nationality">Nationality:</label>
+                      <select id="nationality" class="input-field" required>
+                        <option value="" disabled selected>Select Nationality</option>
+                        <option value="Single">Filipino</option>
+                        <option value="Single">American</option>
+                      </select>
+                    </div>
+                    
+                    <div class="input-row">
+                      <label for="civilStatus">*Civil Status:</label>
+                      <select id="civilStatus" class="input-field" required>
+                        <option value="" disabled selected>Select Civil Status</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Widowed">Widowed</option>
+                        <option value="Divorced">Divorced</option>
+                      </select>
+                    </div>
+                    <div class="input-row">
+                      <label for="sex">Sex:</label>
+                      <select id="sex" class="input-field" required>
+                        <option value="" disabled selected>Select Sex</option>
+                        <option value="Single">Male</option>
+                        <option value="Single">Female</option>
+        
+                      </select>
+                    </div>
+                    
+                    <div class="input-row">
+                        <label for="occupation">*Occupation:</label>
+                        <input type="text" id="occupation" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                        <label for="annualIncome">*Annual Income:</label>
+                        <input type="number" id="annualIncome" class="input-field" required>
+                    </div>
+                    <div class="input-row">
+                      <label for="childrenId">How Many Children in Family:</label>
+                      <input type="text" id="childrenId" class="input-field" required>
+                    </div>
+                    <div class="input-group">
+                    
+                        <div class="input-row">
+                            <label for="householdNum">*Household Number:</label>
+                            <input type="text" id="householdNum" class="input-field" required>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        
+            <!-- Address Section -->
+            <fieldset class="section">
+                <legend>Address</legend>
+                <div class="input-group">
+                  <div class="input-row">
+                    <label for="country">Country:</label>
+                    <select id="country" class="input-field" required>
+                      <option value="" disabled selected>Country</option>
+                      <option value="Single">Philippines</option>
+                      <option value="Single">American</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="region">Region:</label>
+                    <select id="region" class="input-field" required>
+                      <option value="" disabled selected>Region</option>
+                      <option value="Single">Calabarzon</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="province">Province:</label>
+                    <select id="province" class="input-field" required>
+                      <option value="" disabled selected>Province</option>
+                      <option value="Single">Quezon</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="municipality">Municipality:</label>
+                    <select id="municipality" class="input-field" required>
+                      <option value="" disabled selected>Municipality</option>
+                      <option value="Single">Lucena City</option>
+                    </select>
+                  </div>
+                  <div class="input-row">
+                    <label for="barangay">Barangay:</label>
+                    <select id="barangay" class="input-field" required>
+                      <option value="" disabled selected>Barangay</option>
+                      <option value="Single">Brgy 1</option>
+                    </select>
+                  </div>
+        
+                    <div class="input-row">
+                        <label for="street">*Street:</label>
+                        <input type="text" id="street" class="input-field" required>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="section">
+            <legend>Document Status</legend>
+            <div class="input-group">
+                <div class="input-row">
+                    <label><input type="radio" name="docStatus" value="complete"> Complete</label>
+                    <label><input type="radio" name="docStatus" value="incomplete"> Incomplete</label>
+                </div>
+            </div>
+        </fieldset>
+                  
+        
+                  
+                  <button type="submit" class="submit-btn">Update Applicant</button>
+                </form>
+              </section>
+            
+    </main>
+    <div id="alert-container" class="alert-container"></div>
+
+    <script src="sidebar.js"></script>
+    <script>// Get elements
+        const form = document.querySelector('.form');
+        const alertContainer = document.getElementById('alert-container');
+        
+        // Function to display alert message
+        function displayAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.classList.add('alert', type); // Add class based on message type (success or error)
+            alertDiv.textContent = message;
+            alertContainer.appendChild(alertDiv);
+        
+            // Remove alert after 3 seconds
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 3000);
+        }
+        
+        // Function to validate form inputs
+        function validateForm() {
+            const nationalId = document.getElementById('nationalId').value;
+            const lastName = document.getElementById('lastName').value;
+            const firstName = document.getElementById('firstName').value;
+            const middleInitial = document.getElementById('middleInitial').value;
+            const birthDate = document.getElementById('birthDate').value;
+            const age = document.getElementById('age').value;
+            const occupation = document.getElementById('occupation').value;
+            const annualIncome = document.getElementById('annualIncome').value;
+            const householdNum = document.getElementById('householdNum').value;
+            
+            // Check if any required field is empty
+            if (!nationalId || !lastName || !firstName || !middleInitial || !birthDate || !age || !occupation || !annualIncome || !householdNum) {
+                displayAlert('All fields are required!', 'error');
+                return false;
+            }
+        
+            return true;
+        }
+        
+        // Form submission handler
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission to demonstrate DOM manipulation
+        
+            if (validateForm()) {
+                // If validation passes, show success alert
+                displayAlert('Applicant updated successfully!', 'success');
+                
+                // Optionally, reset the form after submission
+                form.reset();
+            }
+        });
+        
+        // Search button functionality
+        const searchButton = document.querySelector('.search-btn');
+        searchButton.addEventListener('click', function() {
+            const nationalIdInput = document.getElementById('nationalId').value;
+            
+            // Simulate a search action based on the National ID
+            if (nationalIdInput) {
+                displayAlert(`Searching for applicant with ID: ${nationalIdInput}`, 'info');
+            } else {
+                displayAlert('Please enter a National ID to search.', 'warning');
+            }
+        });
+
+
+     
+  // A mock database for National IDs (for demonstration purposes)
+  const applicantsData = {
+    "1234567899876543": {
+      lastName: "Doe",
+      firstName: "John",
+      middleInitial: "S",
+      birthDate: "1990-05-14",
+      age: 34,
+      nationality: "Filipino",
+      civilStatus: "Single",
+      sex: "Male",
+      occupation: "Software Engineer",
+      annualIncome: 500000,
+      childrenId: 2,
+      householdNum: "12345",
+      country: "Philippines",
+      region: "Calabarzon"
+    },
+    "9876543211234567": {
+      lastName: "Smith",
+      firstName: "Jane",
+      middleInitial: "A",
+      birthDate: "1985-02-20",
+      age: 39,
+      nationality: "American",
+      civilStatus: "Married",
+      sex: "Female",
+      occupation: "Teacher",
+      annualIncome: 400000,
+      childrenId: 1,
+      householdNum: "67890",
+      country: "Philippines",
+      region: "Metro Manila"
+    }
+    // Add more applicants data as needed
+  };
+
+  // Function to search for the National ID and populate form
+  function searchNationalId() {
+    const nationalId = document.getElementById('nationalId').value;
+    const applicant = applicantsData[nationalId];
+
+    if (applicant) {
+      // Populate the form fields with applicant details
+      document.getElementById('lastName').value = applicant.lastName;
+      document.getElementById('firstName').value = applicant.firstName;
+      document.getElementById('middleInitial').value = applicant.middleInitial;
+      document.getElementById('birthDate').value = applicant.birthDate;
+      document.getElementById('age').value = applicant.age;
+      document.getElementById('nationality').value = applicant.nationality;
+      document.getElementById('civilStatus').value = applicant.civilStatus;
+      document.getElementById('sex').value = applicant.sex;
+      document.getElementById('occupation').value = applicant.occupation;
+      document.getElementById('annualIncome').value = applicant.annualIncome;
+      document.getElementById('childrenId').value = applicant.childrenId;
+      document.getElementById('householdNum').value = applicant.householdNum;
+      document.getElementById('country').value = applicant.country;
+      document.getElementById('region').value = applicant.region;
+      setTimeout(function() {
+        displayAlert('Successfully found the applicant!', 'success');
+        displayAlert('confirm');
+      }, 1000);
+    } else {
+      // Add a 2-second delay before showing the error alert
+      setTimeout(function() {
+        displayAlert('Not existing.', 'error');
+      }, 2000); // 2-second delay
+    }
+}
+
+
+  // Add event listener to the search button
+  document.querySelector('.search-btn').addEventListener('click', searchNationalId);
+
+
+        </script>
+</body>
+</html>

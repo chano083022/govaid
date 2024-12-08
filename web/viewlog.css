@@ -1,0 +1,214 @@
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 20px; 
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-info .user-id {
+    margin-right: 10px;
+  }
+
+  .user-info .user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #00d4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+  }
+
+  .form-container {
+    margin-top: 20px;
+  }
+
+  header {
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  .form-container {
+    margin-top: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus {
+    border-color: #00d4ff;
+  }
+
+  
+
+  .log-section {
+    margin-top: 30px;
+  }
+
+  .log-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .log-search {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .search-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-section input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 150px; /* Default width */
+  }
+  
+  .search-section .search-button {
+    padding: 8px;
+    background-color: #00d4ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto; /* Default: fits content */
+    min-width: 60px; /* Set a minimum width for consistency */
+  }
+  
+  .search-section .search-button:hover {
+    background-color: #0066cc;
+  }
+  
+  /* Adjustments for Smaller Screens */
+  @media (max-width: 768px) {
+    .search-section input {
+      width: 120px; /* Adjust input size */
+    }
+  
+    .search-section .search-button {
+      padding: 6px 10px; /* Reduce padding for smaller button */
+      min-width: 50px; /* Ensure it doesn’t shrink too much */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-section {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: stretch;
+    }
+  
+    .search-section input {
+      width: 100%; /* Full-width input */
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .search-section .search-button {
+      width: 100%; /* Full-width button for mobile */
+      padding: 6px; /* Compact padding */
+    }
+  }
+
+
+  .table-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  }
+
+  .table-container {
+  max-height: 300px; 
+  overflow-y: auto; 
+  }
+
+
+  .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  }
+
+  .data-table th,
+  .data-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  }
+
+  .data-table th {
+  background-color: #00d4ff;
+  color: white;
+  }
+
+  .data-table tr:hover {
+  background-color: #f1f1f1;
+  }
+
+  
+  .action-button {
+    padding: 8px 12px;
+    background-color: #00d4ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #008bbf;
+  }
+

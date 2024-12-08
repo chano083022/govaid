@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="delete.css">
+</head>
+<body>
+    <nav id="sidebar">
+        <ul>
+          
+            <li>
+                <span class="log">Goverment Aid</span>
+                <button onclick="toggleSidebar()" id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-280v-400L240-480l200 200Zm80 160h80v-720h-80v720Z"/></svg>
+                                    </button>
+            </li>
+            <li >
+                <a href="dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+                    <span>Dashboard</span></a>
+            </li>
+            
+            <li >
+                <a href="add.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-240h80v-120h120v-80H520v-120h-80v120H320v80h120v120ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+                    <span>Apply</span></a>
+            </li>
+            <li>
+                <a href="update.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></svg>
+                    <span>Update</span></a>
+            </li>
+            <li class="active">
+                <a href="delete.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M640-520v-80h240v80H640Zm-280 40q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm80-80h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0-80Zm0 400Z"/></svg>
+                    <span>Delete</span></a>
+            </li>
+            <li >
+                <a href="viewLog.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-200v-440 440-15 15Zm0 80q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v171q-18-13-38-22.5T800-508v-132H160v440h283q3 21 9 41t15 39H160Zm240-600h160v-80H400v80ZM720-40q-83 0-141.5-58.5T520-240q0-83 58.5-141.5T720-440q83 0 141.5 58.5T920-240q0 83-58.5 141.5T720-40Zm20-208v-112h-40v128l86 86 28-28-74-74Z"/></svg>
+                    <span>View Log</span></a>
+            </li>
+            <li>
+                <a href="login.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+                    <span>Logout</span></a>
+            </li>
+        </ul>
+
+    </nav>
+    <div class="scrollable-container">
+        <main class="main-content">
+          <header class="header">
+            <h1>Welcome, Encoder! Going to DELETE Applicant? </h1>
+            <div class="user-info">
+              <span class="user-id">A-324232</span>
+              <div class="user-avatar">👤</div>
+            </div>
+          </header>
+
+          <div class="search-section">
+            <input type="text" id="national-id" placeholder="National ID">
+            <button class="search-button" onclick="searchApplicant()">Search</button>
+          </div>
+
+          <div class="table-section">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Select</th>
+                  <th>Name</th>
+                  <th>Status</th>
+                  <th>Encoder</th>
+                  <th>Date</th>
+                  <th>National ID</th>
+                  <th>Household No</th>
+                  <th>Aid Type</th>
+                </tr>
+              </thead>
+              <tbody id="log-entries">
+
+                <tr>
+                  <td><input type="checkbox" class="delete-checkbox"></td>
+                  <td>Jane Smith</td>
+                  <td>Approved Applicant</td>
+                  <td>Carlos Reyes</td>
+                  <td>11/17/2024, 8:35:12 PM</td>
+                  <td>123-45-6789</td>
+                  <td>101</td>
+                  <td>Food Assistance</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="delete-checkbox"></td>
+                  <td>John Doe</td>
+                  <td>Approved Applicant</td>
+                  <td>Maria Lopez</td>
+                  <td>11/18/2024, 9:12:45 AM</td>
+                  <td>987-65-4321</td>
+                  <td>102</td>
+                  <td>Medical Aid</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="delete-checkbox"></td>
+                    <td>John Doe</td>
+                    <td>Approved Applicant</td>
+                    <td>Maria Lopez</td>
+                    <td>11/18/2024, 9:12:45 AM</td>
+                    <td>987-65-4321</td>
+                    <td>102</td>
+                    <td>Medical Aid</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="delete-checkbox"></td>
+                    <td>John Doe</td>
+                    <td>Approved Applicant</td>
+                    <td>Maria Lopez</td>
+                    <td>11/18/2024, 9:12:45 AM</td>
+                    <td>987-65-4321</td>
+                    <td>102</td>
+                    <td>Medical Aid</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="delete-checkbox"></td>
+                    <td>John Doe</td>
+                    <td>Approved Applicant</td>
+                    <td>Maria Lopez</td>
+                    <td>11/18/2024, 9:12:45 AM</td>
+                    <td>987-65-4321</td>
+                    <td>102</td>
+                    <td>Medical Aid</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="delete-checkbox"></td>
+                    <td>John Doe</td>
+                    <td>Approved Applicant</td>
+                    <td>Maria Lopez</td>
+                    <td>11/18/2024, 9:12:45 AM</td>
+                    <td>987-65-4321</td>
+                    <td>102</td>
+                    <td>Medical Aid</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" class="delete-checkbox"></td>
+                    <td>John Doe</td>
+                    <td>Approved Applicant</td>
+                    <td>Maria Lopez</td>
+                    <td>11/18/2024, 9:12:45 AM</td>
+                    <td>987-65-4321</td>
+                    <td>102</td>
+                    <td>Medical Aid</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+
+        <div class="reason-section">
+          <label for="reason">Reason for Deleting Applicant:</label>
+          <textarea id="reason" placeholder="Enter reason for deleting this applicant..."></textarea>
+          <button onclick="deleteApplicant()">Delete Selected Applicant</button>
+        </div>
+      </main>
+    </div>
+    <div id="alert-container" class="alert-container"></div>
+
+
+  <script>
+          function searchApplicant() {
+      const nationalId = document.getElementById('national-id').value;
+      const logEntries = document.getElementById('log-entries');
+      let found = false;
+
+      for (let row of logEntries.rows) {
+        let cells = row.cells;
+        let idCell = cells[5];  // National ID cell
+        if (idCell && idCell.textContent.includes(nationalId)) {
+          row.style.display = ''; // Show row if it matches
+          found = true;
+        } else {
+          row.style.display = 'none'; // Hide rows that don't match
+        }
+      }
+
+      if (!found) {
+        displayAlert('No applicant found with the given National ID', 'warning');
+
+      }
+    }
+
+    function displayAlert(message, type) {
+    const alertContainer = document.getElementById('alert-container');
+    const alert = document.createElement('div');
+    alert.classList.add('alert');
+
+    // Add the specific alert type class
+    alert.classList.add(`alert-${type}`);
+
+    // Set the message inside the alert
+    alert.textContent = message;
+
+    // Append the alert to the alert container
+    alertContainer.appendChild(alert);
+
+    // Display the alert container
+    alertContainer.style.display = 'block';
+
+    // Remove the alert after 5 seconds
+    setTimeout(() => {
+        alertContainer.removeChild(alert);
+        if (alertContainer.children.length === 0) {
+            alertContainer.style.display = 'none';
+        }
+    }, 5000);
+}
+function deleteApplicant() {
+        const reason = document.getElementById('reason').value;
+        const selectedCheckboxes = document.querySelectorAll('.delete-checkbox:checked');
+
+        // Validation for selected checkboxes
+        if (selectedCheckboxes.length === 0) {
+            displayAlert('Please select at least one applicant to delete.', 'warning');
+            return;
+        }
+
+        // Validation for reason input
+        if (!reason) {
+            displayAlert('Please enter a reason for deleting the applicant.', 'warning');
+            return;
+        }
+
+        // Delete selected rows
+        selectedCheckboxes.forEach(checkbox => {
+            const row = checkbox.closest('tr'); // Get the closest row of the checkbox
+            row.remove(); // Remove the row
+        });
+
+        // Show success alert
+        displayAlert('Applicant(s) successfully deleted!', 'success');
+    }
+ 
+
+
+  </script>
+    <script src="sidebar.js"></script>
+</body>
+</html>
